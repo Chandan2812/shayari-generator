@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <title>Shayari Generator</title>
+    <style>
+       body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        height: 100vh;
+        margin: auto;
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(6,87,207,1) 35%, rgba(0,212,255,1) 100%);
+       }
+       body>div{
+        width: 50%;
+        height: 90%;
+        background-color: rgb(221, 190, 205);
+        box-shadow: 1px 4px 22px -8px #0004;
+        padding-bottom: 30px;
+       }
+       body>div:nth-child(2)
+       {
+        overflow-y: scroll;
+
+       }
+       
+       #gen{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 30px;
+       }
+       #gen>input{
+        height: 30px;
+        border-radius: 20px;
+        margin: 10px;
+        padding: 20px;
+        font-size: 20px;
+       }
+       #gen>div{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        width: 90%;
+        margin: auto;       
+       }
+       
+       #gen>div>button{
+        margin-top: 30px;
+        height: 50px;
+        background-color: #00053d;
+        border: 1px solid #b5d0f8;
+        color: #fff;
+        font-weight: bold;
+        -webkit-box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
+        -moz-box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
+        box-shadow: 0px 9px 15px -11px rgba(88,54,114,1);
+        border-radius: 10px;
+    }
+        #gen>div>button:hover{
+        background-color: #5994ed;
+        cursor: pointer;
+        transition: 0.3s ease;
+        border-radius: 35px;
+    }
+
+    #shayari-display{
+        font-size: 20px;
+         margin: 0;
+    }
+    #content{
+        font-size: 40px;
+        color: #00053d;
+        text-align: center;
+        margin: 0;
+    }
+    #cont{
+        margin: 30px 20px;
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+        border-radius: 20px;
+    }
+    @media only screen and (max-width: 750px){
+        body{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        body>div{
+            width: 90%;
+        }
+        #gen>div{
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 0px;
+        }
+        #gen>div>button{
+            margin: 2px;
+        }
+    }
+
+    </style>
+
+</head>
+<body>
+    <div>
+
+    <div id="gen">
+        <input type="text" id="prompt-input" placeholder="Enter a keyword">
+        <div>
+            <button id="shayari">Generate Shayari</button>
+            <button id="joke">Generate Joke</button>
+            <button id="story">Generate Story</button>
+            <button id="quote">Generate Quote</button>
+        </div>
+    </div>
+    </div>
+    <div>
+        <div id="cont">
+            <p id="content"></p>
+            <p id="shayari-display"></p>
+        </div>
+       
+    </div>
+    
+
+    
+</body>
+<script src="app.js"></script>
+</html>
